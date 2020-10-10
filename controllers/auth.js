@@ -1,4 +1,4 @@
-const { response, request } = require('express')
+const { response } = require('express')
 const bcrypt = require('bcryptjs')
 const { generateJWT } = require('../helpers/JWT')
 
@@ -43,11 +43,11 @@ const register = async(req, res = response) => {
         })
         
     } catch (error) {
-
+        console.log(error)
         res.status(500).json({
 
             ok: false,
-            msg: error
+            msg: 'Could not register new user'
         })
     }
 

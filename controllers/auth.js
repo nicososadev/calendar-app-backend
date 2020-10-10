@@ -94,11 +94,11 @@ const login = async(req, res = response) => {
         })
 
     } catch (error) {
-
+        console.log(error)
         res.status(500).json({
 
             ok: false,
-            msg: error
+            msg: 'Could not login'
         })
     }
 
